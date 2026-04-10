@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import { ChevronRight, Home, Leaf, Heart, HomeIcon, Instagram, Facebook } from "lucide-react";
+import { ChevronRight, Home, Leaf, Star as StarIcon, HomeIcon, Instagram, Facebook } from "lucide-react";
 import cafeInterior from "@/assets/cafe-interior.jpg";
 import ReviewCard, { reviews } from "@/components/ReviewCard";
 import { useFadeInOnScroll } from "@/hooks/useFadeInOnScroll";
 
 const values = [
-  { icon: <Leaf size={28} />, title: "Fresh Ingredients", desc: "Sourced daily from local markets" },
-  { icon: <Heart size={28} />, title: "Made with Love", desc: "Every dish crafted with care" },
-  { icon: <HomeIcon size={28} />, title: "Homely Atmosphere", desc: "A warm corner in busy Mumbai" },
+  { icon: <Leaf size={28} />, title: "Parsi, Italian & Bombay Recipes", desc: "Three grandmothers, one magical menu" },
+  { icon: <HomeIcon size={28} />, title: "Cottage Ambience", desc: "Antique décor, chintz upholstery & vintage charm" },
+  { icon: <StarIcon size={28} />, title: "4.2 Stars & 5,600+ Reviews", desc: "Loved by thousands of Mumbaikars" },
 ];
 
 const AboutPage = () => {
@@ -34,22 +34,19 @@ const AboutPage = () => {
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-10 items-center">
             <div className="rounded-2xl overflow-hidden shadow-lg w-full">
-              <img src={cafeInterior} alt="Grandmama's Café interior" loading="lazy" className="w-full h-56 sm:h-72 md:h-[28rem] object-cover" width={800} height={600} />
+              <img src={cafeInterior} alt="Grandmama's Café interior — white & green décor, antique plates on walls" loading="lazy" className="w-full h-56 sm:h-72 md:h-[28rem] object-cover" width={800} height={600} />
             </div>
             <div>
               <h2 className="font-heading text-2xl sm:text-3xl text-foreground mb-4 md:mb-6">A Taste of Home</h2>
               <div className="font-body text-muted-foreground leading-relaxed space-y-3 sm:space-y-4 text-sm sm:text-base">
                 <p>
-                  Grandmama's Café was born out of a simple yet powerful idea — that food has the power to connect people, evoke memories, and make every moment feel a little more special.
+                  Grandmama's Café was born from a beautifully simple idea — to recreate the warmth, comfort, and flavours of a grandmother's kitchen. Founded with love and passion, we have grown from a single cozy café to a beloved chain across Mumbai. Nestled in the historic Habib Mansion at Kemp's Corner, our Tardeo outlet is one of our most cherished — a place where old-world charm meets modern culinary creativity.
                 </p>
                 <p>
-                  Nestled in the vibrant neighbourhood of Juhu, Mumbai, we are a cozy corner where traditional recipes meet modern flavours. Every dish that leaves our kitchen carries the warmth of a grandmother's kitchen — crafted with patience, love, and the finest local ingredients.
+                  Our menu draws inspiration from three iconic grandmothers: a Parsi granny's soulful dhanshak, an Italian nonna's handcrafted pasta, and a Bombay grandmother's cosmopolitan kitchen. Every dish is crafted with patience, the finest local ingredients, and an unwavering belief in honest, home-style cooking.
                 </p>
                 <p>
-                  Whether you're stopping by for a quick bite or settling in for a long conversation over coffee, Grandmama's is your home away from home.
-                </p>
-                <p>
-                  We believe in honest food — no shortcuts, no compromises. Just real ingredients, real recipes, and real smiles.
+                  With a European-cottage aesthetic — think chintz upholstery, floral wallpapers, framed embroidery, antique plates on the walls, and a warm sea-green door — Grandmama's is not just a restaurant. It is a feeling. Come as you are. Stay as long as you like. Grandmama's always has a seat for you.
                 </p>
               </div>
             </div>
@@ -79,7 +76,7 @@ const AboutPage = () => {
       <section className="py-8 md:py-16 lg:py-24 bg-linen fade-in-section">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-center text-foreground mb-8 md:mb-12">Guest Reviews</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {reviews.map((r, i) => <ReviewCard key={i} review={r} />)}
           </div>
         </div>

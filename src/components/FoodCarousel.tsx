@@ -6,12 +6,14 @@ import foodDessert from "@/assets/food-dessert.jpg";
 import foodShake from "@/assets/food-shake.jpg";
 
 const items = [
-  { img: foodMomos, label: "Momos" },
-  { img: foodJuice, label: "Fresh Juices" },
-  { img: foodNoodles, label: "Noodles" },
-  { img: foodPasta, label: "Pasta" },
-  { img: foodDessert, label: "Desserts" },
-  { img: foodShake, label: "Shakes" },
+  { img: foodMomos, label: "Grandmama's Roast Chicken" },
+  { img: foodPasta, label: "Pesto Basilico Pasta" },
+  { img: foodPasta, label: "BBQ Cottage Cheese Pizza" },
+  { img: foodShake, label: "Oreo KitKat Thick Shake" },
+  { img: foodDessert, label: "Gooey Chocolate Decadent Cake" },
+  { img: foodJuice, label: "Beiruti Hummus with Pita" },
+  { img: foodNoodles, label: "Falafel Shawarma" },
+  { img: foodPasta, label: "Mac & Cheese" },
 ];
 
 const FoodCarousel = ({ large = false }: { large?: boolean }) => {
