@@ -56,7 +56,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`font-body text-sm uppercase tracking-widest transition-colors duration-300 ${
-                  scrolled ? "text-primary-foreground/80 hover:text-gold" : "text-cream/80 hover:text-gold"
+                  scrolled ? "text-primary-foreground hover:text-gold" : "text-cream hover:text-gold"
                 }`}
               >
                 {link.label}
@@ -68,7 +68,7 @@ const Navbar = () => {
                 className={`font-body text-sm uppercase tracking-widest transition-colors duration-300 ${
                   location.pathname === link.to ? "text-gold" : ""
                 } ${
-                  scrolled ? "text-primary-foreground/80 hover:text-gold" : "text-cream/80 hover:text-gold"
+                  scrolled ? "text-primary-foreground hover:text-gold" : "text-cream hover:text-gold"
                 }`}
               >
                 {link.label}

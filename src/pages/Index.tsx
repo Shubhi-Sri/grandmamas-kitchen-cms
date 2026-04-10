@@ -29,7 +29,7 @@ const Index = () => {
           <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-cream mb-4 leading-tight">
             Where Every Meal Feels Like Home
           </h1>
-          <p className="font-body text-base sm:text-lg md:text-xl text-cream/80 mb-6 sm:mb-8 max-w-xl mx-auto">
+          <p className="font-body text-base sm:text-lg md:text-xl text-cream mb-6 sm:mb-8 max-w-xl mx-auto">
             Authentic flavours crafted with love, in the heart of Juhu, Mumbai
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
@@ -41,7 +41,7 @@ const Index = () => {
             </Link>
             <button
               onClick={() => setReserveOpen(true)}
-              className="px-8 py-3 border-2 border-gold text-gold font-body font-bold rounded-lg hover:bg-gold hover:text-primary transition-colors text-sm uppercase tracking-wider w-full sm:w-auto"
+              className="px-8 py-3 border-2 border-cream text-cream font-body font-bold rounded-lg hover:bg-gold hover:text-primary hover:border-gold transition-colors text-sm uppercase tracking-wider w-full sm:w-auto"
             >
               Reserve a Table
             </button>
