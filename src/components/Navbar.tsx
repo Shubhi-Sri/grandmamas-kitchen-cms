@@ -6,7 +6,7 @@ const navLinks = [
   { label: "Home", to: "/" },
   { label: "Menu", to: "/menu" },
   { label: "About", to: "/about" },
-  { label: "Zomato", to: "#", external: true },
+  { label: "Zomato", to: "https://www.zomato.com/mumbai/grandmamas-cafe-tardeo", external: true },
   { label: "Swiggy", to: "#", external: true },
 ];
 
