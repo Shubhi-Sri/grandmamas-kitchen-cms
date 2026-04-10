@@ -32,8 +32,8 @@ const Stars = ({ rating }: { rating: number }) => {
 };
 
 const ReviewCard = ({ review }: { review: Review }) => (
-  <div className="bg-card rounded-xl p-6 shadow-md border border-border/50 flex flex-col gap-3 min-w-[280px] max-w-sm">
-    <span className="text-gold font-heading text-4xl leading-none">"</span>
+  <div className="bg-card rounded-xl p-5 sm:p-6 shadow-md border border-border/50 flex flex-col gap-3 min-w-0 max-w-none sm:max-w-sm">
+    <span className="text-gold font-heading text-3xl sm:text-4xl leading-none">"</span>
     <p className="font-body text-sm text-foreground/80 leading-relaxed -mt-4">{review.text}</p>
     <Stars rating={review.rating} />
     <div className="flex items-center justify-between mt-auto pt-2">

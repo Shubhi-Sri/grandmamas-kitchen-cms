@@ -20,23 +20,23 @@ const EnquiryPopup = () => {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-gold text-primary px-4 py-3 rounded-full shadow-lg hover:scale-105 transition-transform duration-200 font-body font-bold text-sm"
+        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-gold text-primary w-12 h-12 md:w-auto md:h-auto md:px-4 md:py-3 rounded-full shadow-lg hover:scale-105 transition-transform duration-200 font-body font-bold text-sm justify-center"
       >
         <Mail size={18} />
-        <span className="hidden sm:inline">Enquire</span>
+        <span className="hidden md:inline">Enquire</span>
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
+        <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center">
           <div className="absolute inset-0 bg-foreground/40 backdrop-blur-sm" onClick={() => setOpen(false)} />
-          <div className="relative w-full sm:max-w-md bg-cream rounded-t-2xl sm:rounded-2xl shadow-2xl p-6 sm:p-8 animate-[slideUp_0.3s_ease-out] max-h-[90vh] overflow-y-auto">
-            <button onClick={() => setOpen(false)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground">
+          <div className="relative w-full md:max-w-md bg-cream rounded-t-2xl md:rounded-2xl shadow-2xl p-6 md:p-8 animate-[slideUp_0.3s_ease-out] max-h-[90vh] overflow-y-auto">
+            <button onClick={() => setOpen(false)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground min-h-[48px] min-w-[48px] flex items-center justify-center">
               <X size={20} />
             </button>
 
             <div className="text-center mb-6">
               <h3 className="font-heading italic text-xl text-gold mb-1">Grandmama's Café</h3>
-              <h2 className="font-heading text-2xl text-foreground">Get in Touch with Us</h2>
+              <h2 className="font-heading text-xl md:text-2xl text-foreground">Get in Touch with Us</h2>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -48,7 +48,7 @@ const EnquiryPopup = () => {
                   maxLength={100}
                   value={form.name}
                   onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold/50"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background font-body focus:outline-none focus:ring-2 focus:ring-gold/50"
                 />
               </div>
               <div>
@@ -59,7 +59,7 @@ const EnquiryPopup = () => {
                   maxLength={255}
                   value={form.email}
                   onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold/50"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background font-body focus:outline-none focus:ring-2 focus:ring-gold/50"
                 />
               </div>
               <div>
@@ -70,7 +70,7 @@ const EnquiryPopup = () => {
                   rows={4}
                   value={form.message}
                   onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background font-body focus:outline-none focus:ring-2 focus:ring-gold/50 resize-none"
                 />
               </div>
               <button

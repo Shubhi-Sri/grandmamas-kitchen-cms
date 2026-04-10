@@ -16,11 +16,13 @@ const items = [
 
 const FoodCarousel = ({ large = false }: { large?: boolean }) => {
   const doubled = [...items, ...items];
-  const size = large ? "w-64 h-48 md:w-80 md:h-60" : "w-40 h-32 md:w-52 md:h-40";
+  const size = large
+    ? "w-[80vw] h-[200px] sm:w-64 sm:h-48 md:w-72 md:h-56 lg:w-80 lg:h-60"
+    : "w-[60vw] h-[140px] sm:w-40 sm:h-32 md:w-52 md:h-40";
 
   return (
-    <div className="overflow-hidden carousel-fade-both">
-      <div className="flex gap-4 animate-scroll-left" style={{ width: "max-content" }}>
+    <div className="overflow-hidden carousel-fade-both touch-scroll">
+      <div className="flex gap-3 sm:gap-4 animate-scroll-left" style={{ width: "max-content" }}>
         {doubled.map((item, i) => (
           <div key={i} className={`${size} relative rounded-xl overflow-hidden shrink-0 group`}>
             <img
@@ -31,7 +33,7 @@ const FoodCarousel = ({ large = false }: { large?: boolean }) => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
             {large && (
-              <span className="absolute bottom-3 left-4 font-heading text-lg text-cream">{item.label}</span>
+              <span className="absolute bottom-3 left-4 font-heading text-base sm:text-lg text-cream">{item.label}</span>
             )}
           </div>
         ))}

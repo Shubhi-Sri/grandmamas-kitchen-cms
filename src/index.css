@@ -102,9 +102,48 @@
   }
 }
 
-/* Smooth scroll */
+/* Smooth scroll & global overflow prevention */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* iOS smooth touch scrolling for horizontal containers */
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.touch-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Prevent iOS zoom on input focus — enforce 16px min */
+input, textarea, select {
+  font-size: 16px !important;
+}
+
+/* Min touch target for inputs and buttons */
+input, textarea, select, button {
+  min-height: 48px;
+}
+
+/* Hover only on devices that support it */
+@media (hover: hover) {
+  .hover-safe:hover {
+    transform: scale(1.05);
+  }
 }
 
 /* Loading screen */
@@ -158,8 +197,10 @@ html {
   animation: scroll-left 30s linear infinite;
 }
 
-.animate-scroll-left:hover {
-  animation-play-state: paused;
+@media (hover: hover) {
+  .animate-scroll-left:hover {
+    animation-play-state: paused;
+  }
 }
 
 /* Fade in on scroll */
@@ -178,4 +219,9 @@ html {
 @keyframes leafFall {
   0% { transform: translateY(-10vh) rotate(0deg); opacity: 0.7; }
   100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
