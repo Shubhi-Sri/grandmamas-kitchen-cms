@@ -35,13 +35,13 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link
               to="/menu"
-              className="px-8 py-3 bg-gold text-primary font-body font-bold rounded-lg hover:opacity-90 transition-opacity text-sm uppercase tracking-wider w-full sm:w-auto text-center"
+              className="px-8 py-3 bg-gold text-primary font-body font-bold rounded-lg hover:opacity-90 transition-opacity text-sm uppercase tracking-wider w-full sm:w-auto text-center shadow-[0_4px_20px_rgba(201,168,76,0.5)]"
             >
               View Menu
             </Link>
             <button
               onClick={() => setReserveOpen(true)}
-              className="px-8 py-3 border-2 border-cream text-cream font-body font-bold rounded-lg hover:bg-gold hover:text-primary hover:border-gold transition-colors text-sm uppercase tracking-wider w-full sm:w-auto"
+              className="px-8 py-3 border-2 border-cream text-cream font-body font-bold rounded-lg hover:bg-gold hover:text-primary hover:border-gold transition-colors text-sm uppercase tracking-wider w-full sm:w-auto shadow-[0_4px_20px_rgba(255,255,255,0.25)]"
             >
               Reserve a Table
             </button>
