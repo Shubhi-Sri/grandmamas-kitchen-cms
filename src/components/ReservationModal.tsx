@@ -25,49 +25,49 @@ const ReservationModal = ({ open, onClose }: Props) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center">
       <div className="absolute inset-0 bg-foreground/40 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative w-full sm:max-w-md bg-cream rounded-t-2xl sm:rounded-2xl shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
-        <button onClick={onClose} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground">
+      <div className="relative w-full md:max-w-md bg-cream rounded-t-2xl md:rounded-2xl shadow-2xl p-6 md:p-8 max-h-[90vh] overflow-y-auto">
+        <button onClick={onClose} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground min-h-[48px] min-w-[48px] flex items-center justify-center">
           <X size={20} />
         </button>
 
-        <h2 className="font-heading text-2xl text-foreground mb-1">Reserve a Table</h2>
+        <h2 className="font-heading text-xl md:text-2xl text-foreground mb-1">Reserve a Table</h2>
         <p className="text-sm text-muted-foreground mb-6">Book your spot at Grandmama's Café</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="relative">
-            <User size={16} className="absolute left-3 top-3.5 text-muted-foreground" />
+            <User size={16} className="absolute left-3 top-4 text-muted-foreground" />
             <input type="text" required maxLength={100} placeholder="Your Name" value={form.name}
               onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-              className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-background font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold/50" />
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-background font-body focus:outline-none focus:ring-2 focus:ring-gold/50" />
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div className="relative">
-              <Calendar size={16} className="absolute left-3 top-3.5 text-muted-foreground" />
+              <Calendar size={16} className="absolute left-3 top-4 text-muted-foreground" />
               <input type="date" required value={form.date}
                 onChange={e => setForm(f => ({ ...f, date: e.target.value }))}
-                className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-background font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold/50" />
+                className="w-full pl-10 pr-2 py-3 rounded-lg border border-border bg-background font-body focus:outline-none focus:ring-2 focus:ring-gold/50" />
             </div>
             <div className="relative">
-              <Clock size={16} className="absolute left-3 top-3.5 text-muted-foreground" />
+              <Clock size={16} className="absolute left-3 top-4 text-muted-foreground" />
               <input type="time" required value={form.time}
                 onChange={e => setForm(f => ({ ...f, time: e.target.value }))}
-                className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-background font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold/50" />
+                className="w-full pl-10 pr-2 py-3 rounded-lg border border-border bg-background font-body focus:outline-none focus:ring-2 focus:ring-gold/50" />
             </div>
           </div>
           <div className="relative">
-            <Users size={16} className="absolute left-3 top-3.5 text-muted-foreground" />
+            <Users size={16} className="absolute left-3 top-4 text-muted-foreground" />
             <select value={form.guests} onChange={e => setForm(f => ({ ...f, guests: e.target.value }))}
-              className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-background font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 appearance-none">
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-background font-body focus:outline-none focus:ring-2 focus:ring-gold/50 appearance-none">
               {[1,2,3,4,5,6,7,8].map(n => <option key={n} value={n}>{n} {n === 1 ? "Guest" : "Guests"}</option>)}
             </select>
           </div>
           <div className="relative">
-            <Phone size={16} className="absolute left-3 top-3.5 text-muted-foreground" />
+            <Phone size={16} className="absolute left-3 top-4 text-muted-foreground" />
             <input type="tel" required maxLength={15} placeholder="Phone Number" value={form.phone}
               onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
-              className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-background font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold/50" />
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-border bg-background font-body focus:outline-none focus:ring-2 focus:ring-gold/50" />
           </div>
           <button type="submit" className="w-full py-3 bg-gold text-primary font-body font-bold rounded-lg hover:opacity-90 transition-opacity">
             Request Reservation
