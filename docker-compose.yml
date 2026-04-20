@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: grandmamas
+    container_name: grandmamas-s
     ports: 
       - "5000:80"
     restart: always
