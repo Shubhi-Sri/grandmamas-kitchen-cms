@@ -1,0 +1,70 @@
+- name: Deploy App using Docker Compose
+  hosts: local
+  become: true
+
+  vars:
+    app_dir: "/home/{{ ansible_user_id }}/app"
+    docker_buildx_dest: "/usr/local/lib/docker/cli-plugins/docker-buildx"
+
+  tasks:
+    - name: Update apt packages
+      apt:
+        update_cache: yes
+
+    - name: Install required packages
+      apt:
+        name:
+          - docker.io
+          - docker-compose
+          - git
+          - curl
+        state: present
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Add user to docker group
+      user:
+        name: "{{ ansible_user_id }}"
+        groups: docker
+        append: yes
+
+    - name: Ensure docker cli-plugins directory exists
+      file:
+        path: "/usr/local/lib/docker/cli-plugins"
+        state: directory
+        mode: "0755"
+
+    - name: Get latest docker buildx tag
+      shell: |
+        curl -s https://api.github.com/repos/docker/buildx/releases/latest \
+        | grep '"tag_name"' | cut -d '"' -f 4
+      register: buildx_latest
+      changed_when: false
+
+    - name: Download docker buildx binary
+      get_url:
+        url: "https://github.com/docker/buildx/releases/download/{{ buildx_latest.stdout }}/buildx-{{ buildx_latest.stdout }}.linux-amd64"
+        dest: "{{ docker_buildx_dest }}"
+        mode: "0755"
+
+    - name: Clone project repo
+      git:
+        repo: "https://github.com/Shubhi-Sri/grandmamas-kitchen-cms.git"
+        dest: "{{ app_dir }}"
+        force: yes
+
+    - name: Stop existing containers
+      command: docker compose down
+      args:
+        chdir: "{{ app_dir }}"
+      ignore_errors: yes
+
+    - name: Run docker compose
+      command: docker compose up -d --build
+      args:
+        chdir: "{{ app_dir }}"
+
