@@ -7,3 +7,9 @@ services:
     ports: 
       - "5000:80"
     restart: always
+
+    volumes:
+      - grandmamas:/app
+
+volumes:
+  grandmamas:
